@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU-Accelerated Cyber Threat Detection & AI Security Assistant</title>
+    <meta name="description" content="Enterprise-grade GPU-accelerated network intrusion detection system and interactive AI Security Copilot.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Background Animated Cyber Grid & Glowing Orbs -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <div class="app-container">
+        <!-- Top Navigation Header -->
+        <header class="app-header glass-card">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>CYBER-GPU <span class="badge-gpu"><i class="fa-solid fa-bolt"></i> CUDA ACCELERATED</span></h1>
+                    <p class="subtitle">Real-Time Threat Detection Engine & AI Security Copilot</p>
+                </div>
+            </div>
+
+            <!-- Real-Time Telemetry Stats -->
+            <div class="header-stats">
+                <div class="stat-pill">
+                    <span class="stat-label"><i class="fa-solid fa-brain"></i> Model Mode</span>
+                    <span class="stat-value text-cyan" id="gpu-mode-status">PyTorch CUDA</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-label"><i class="fa-solid fa-gauge-high"></i> Latency</span>
+                    <span class="stat-value text-green" id="gpu-latency">135 µs</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-label"><i class="fa-solid fa-chart-line"></i> Pipeline</span>
+                    <span class="stat-value text-purple" id="network-throughput">48.2 Gbps</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-label"><i class="fa-solid fa-shield-virus"></i> Alerts</span>
+                    <span class="stat-value text-pink" id="anomaly-count-pill">0 Anomalies</span>
+                </div>
+            </div>
+
+            <!-- Global Action Controls -->
+            <div class="header-actions">
+                <button class="btn btn-outline" id="open-pcap-btn" title="Upload PCAP File">
+                    <i class="fa-solid fa-file-code"></i> <span>Upload PCAP</span>
+                </button>
+                <button class="btn btn-outline" id="export-report-btn" title="Export Security Log CSV">
+                    <i class="fa-solid fa-file-export"></i> <span>Export Report</span>
+                </button>
+                <button class="btn btn-outline" id="toggle-stream-btn">
+                    <i class="fa-solid fa-pause"></i> <span id="stream-btn-text">Pause Stream</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <main class="dashboard-grid">
+            
+            <!-- Left Panel: Controls & GPU Telemetry -->
+            <aside class="left-panel glass-card">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-sliders"></i> Engine Controls</h2>
+                </div>
+
+                <!-- Model Selector -->
+                <div class="control-section">
+                    <label class="section-title"><i class="fa-solid fa-network-wired"></i> Neural Engine Architecture</label>
+                    <select id="model-select" class="select-full">
+                        <option value="PyTorch Deep Autoencoder (CUDA)">PyTorch Deep Autoencoder (CUDA)</option>
+                        <option value="XGBoost GPU (RAPIDS cuML)">XGBoost GPU (RAPIDS cuML)</option>
+                        <option value="CNN-LSTM Hybrid (CUDA)">CNN-LSTM Hybrid (CUDA)</option>
+                        <option value="Transformer Threat Detector">Transformer Threat Detector</option>
+                        <option value="LightGBM CUDA Kernel">LightGBM CUDA Kernel</option>
+                    </select>
+                </div>
+
+                <!-- Threat Campaign Injection -->
+                <div class="control-section">
+                    <label class="section-title"><i class="fa-solid fa-layer-group"></i> Cyber Threat Scenarios</label>
+                    <select id="scenario-preset-select" class="select-full">
+                        <option value="normal">Standard Live Baseline</option>
+                        <option value="ddos">Mirai Volumetric SYN Flood Surge</option>
+                        <option value="apt">APT38 Nation-State C2 Campaign</option>
+                        <option value="ransomware">LockBit SMB Exfiltration Wave</option>
+                        <option value="zeroday">Zero-Day Remote Code Execution (RCE)</option>
+                        <option value="scan">Stealth Port Reconnaissance Probe</option>
+                    </select>
+                </div>
+
+                <!-- One-Click Attack Injector -->
+                <div class="control-section">
+                    <label class="section-title"><i class="fa-solid fa-skull-crossbones"></i> Attack Vector Injector</label>
+                    <div class="attack-grid">
+                        <button class="btn-attack" data-attack="ddos">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <div class="btn-txt">
+                                <strong>DDoS Volumetric Surge</strong>
+                                <span>High-rate SYN packet flood</span>
+                            </div>
+                        </button>
+                        <button class="btn-attack" data-attack="apt">
+                            <i class="fa-solid fa-user-ninja"></i>
+                            <div class="btn-txt">
+                                <strong>APT38 C2 Beaconing</strong>
+                                <span>Encrypted lateral traffic</span>
+                            </div>
+                        </button>
+                        <button class="btn-attack" data-attack="ransomware">
+                            <i class="fa-solid fa-lock"></i>
+                            <div class="btn-txt">
+                                <strong>LockBit Exfiltration</strong>
+                                <span>High-volume SMB payload</span>
+                            </div>
+                        </button>
+                        <button class="btn-attack" data-attack="zeroday">
+                            <i class="fa-solid fa-bug"></i>
+                            <div class="btn-txt">
+                                <strong>Zero-Day Log4j RCE</strong>
+                                <span>Obfuscated JNDI payload</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live GPU Hardware Gauges -->
+                <div class="control-section">
+                    <label class="section-title"><i class="fa-solid fa-server"></i> GPU Hardware Telemetry</label>
+                    <div class="gpu-metrics-box">
+                        <div class="metric-bar-group">
+                            <div class="metric-header">
+                                <span class="metric-name">CUDA Utilization</span>
+                                <span class="metric-val" id="gpuUtilVal">42%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="gpuUtilBar" style="width: 42%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-bar-group">
+                            <div class="metric-header">
+                                <span class="metric-name">VRAM Allocation</span>
+                                <span class="metric-val" id="vramVal">4820 / 24576 MB</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill red" id="vramBar" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Threat Stream, Topology Map & SHAP XAI -->
+            <section class="center-panel glass-card">
+                <div class="center-tabs">
+                    <div class="tab-group">
+                        <button class="tab-btn active" data-tab="stream">
+                            <i class="fa-solid fa-list-check"></i> Live Threat Monitor
+                        </button>
+                        <button class="tab-btn" data-tab="topology">
+                            <i class="fa-solid fa-diagram-project"></i> Threat Topology Map
+                        </button>
+                        <button class="tab-btn" data-tab="shap">
+                            <i class="fa-solid fa-chart-bar"></i> SHAP Explainable AI
+                        </button>
+                    </div>
+                </div>
+
+                <div class="view-container">
+                    <!-- Tab 1: Live Threat Monitor Stream -->
+                    <div class="tab-content active" id="stream-tab">
+                        <div class="table-wrapper">
+                            <table class="threat-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Source IP</th>
+                                        <th>Target IP:Port</th>
+                                        <th>Protocol</th>
+                                        <th>Threat Classification</th>
+                                        <th>Entropy</th>
+                                        <th>Anomaly Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="threatStreamBody">
+                                    <!-- Flow rows appended dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Canvas Threat Topology Map -->
+                    <div class="tab-content" id="topology-tab">
+                        <div class="canvas-wrapper">
+                            <canvas id="topologyCanvas"></canvas>
+                            <div class="canvas-overlay-info">
+                                <span><i class="fa-solid fa-circle" style="color: #ff2a55;"></i> Attacker Nodes</span>
+                                <span><i class="fa-solid fa-shield-halved" style="color: #00f0ff;"></i> GPU Gateway</span>
+                                <span><i class="fa-solid fa-server" style="color: #00ff66;"></i> Internal Subnets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: SHAP Explainable AI Breakdown -->
+                    <div class="tab-content" id="shap-tab">
+                        <div class="shap-view">
+                            <div class="shap-card">
+                                <div>
+                                    <h3 style="color: var(--neon-cyan); font-size: 0.95rem; margin-bottom: 4px;">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i> Feature Importance Attribution (SHAP)
+                                    </h3>
+                                    <p class="section-desc" id="shapFlowId">Select any row in the Threat Monitor to inspect model feature attribution.</p>
+                                </div>
+
+                                <div id="shapBarsContainer" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                                    <!-- SHAP feature bars rendered dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: AI Security Assistant Copilot -->
+            <aside class="right-panel glass-card">
+                <div class="copilot-header">
+                    <div class="copilot-title">
+                        <i class="fa-solid fa-robot"></i> AI Security Assistant
+                    </div>
+                    <span class="copilot-badge">Copilot Active</span>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="quick-actions">
+                    <button class="btn-action-pill" data-action="triage">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i> Deep Threat Triage
+                    </button>
+                    <button class="btn-action-pill" data-action="rules">
+                        <i class="fa-solid fa-shield-virus"></i> Synthesize Rules
+                    </button>
+                    <button class="btn-action-pill" data-action="playbook">
+                        <i class="fa-solid fa-book-skull"></i> Incident Playbook
+                    </button>
+                    <button class="btn-action-pill" data-action="payload">
+                        <i class="fa-solid fa-code"></i> Reverse Payload
+                    </button>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Chat bubbles rendered dynamically -->
+                </div>
+
+                <!-- Chat Input Box -->
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="Ask AI assistant about threats, WAF rules, CVEs..." />
+                    <button id="chatSendBtn" class="btn-send" title="Send Message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- PCAP Upload Modal -->
+    <div class="modal-backdrop" id="pcapModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-file-code"></i> Upload PCAP / Security Log File</h3>
+                <button class="modal-close" id="closePcapModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="drop-zone" id="dropZone">
+                <div class="drop-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <p style="font-weight: 600; margin-bottom: 4px;">Drag & Drop `.pcap`, `.pcapng`, or `.csv` files here</p>
+                <p class="section-desc">Extracted flow features will be processed parallelly by the CUDA neural engine</p>
+                <input type="file" id="pcapFileInput" accept=".pcap,.pcapng,.csv,.log" style="display: none;" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Application JavaScript Bundles -->
+    <script src="js/gpu_engine.js"></script>
+    <script src="js/threat_detector.js"></script>
+    <script src="js/ai_assistant.js"></script>
+    <script src="js/topology_map.js"></script>
+    <script src="js/pcap_parser.js"></script>
+    <script src="js/exporter.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
